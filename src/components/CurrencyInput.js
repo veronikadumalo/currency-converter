@@ -7,9 +7,8 @@ export default function CurrencyInput(props) {
             <input type="number" />
             <select>
                 {currencyName && currencyName.map(option =>(
-                    <option value={option}>{option}</option>
+                    <option key={option} value={option}>{option}</option>
                 ))}
-                
             </select>
         </div>
     )

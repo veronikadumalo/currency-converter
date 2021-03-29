@@ -1,12 +1,10 @@
-import logo from './logo.svg';
 import './App.css';
-import CurrencyInput from './components/CurrencyInput'
+import Calculator from './components/Calculator'
 
 function App() {
   return (
     <div className="App">
-      <CurrencyInput />
-      <CurrencyInput />
+      <Calculator />
     </div>
   );
 }

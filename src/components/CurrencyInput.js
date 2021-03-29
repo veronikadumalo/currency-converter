@@ -1,13 +1,15 @@
-import React from 'react'
+import React from 'react';
 
 export default function CurrencyInput(props) {
-    const {currencyName} = props;
+    const {currencyName} = props
     return (
         <div>
             <input type="number" />
             <select>
-                {currencyName.map}
-                <option value="1">1</option>
+                {currencyName && currencyName.map(option =>(
+                    <option value={option}>{option}</option>
+                ))}
+                
             </select>
         </div>
     )

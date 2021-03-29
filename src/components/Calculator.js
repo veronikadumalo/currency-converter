@@ -16,8 +16,8 @@ export default function Calculator() {
     }, [])
     return (
         <div>
-            <CurrencyInput />
-            <CurrencyInput />
+            <CurrencyInput currencyName={currencyName}/>
+            <CurrencyInput currencyName={currencyName}/>
         </div>
     )
 }

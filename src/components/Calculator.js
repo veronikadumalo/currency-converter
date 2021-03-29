@@ -4,14 +4,14 @@ import CurrencyInput from './CurrencyInput'
 const currencyUrl = 'https://api.exchangeratesapi.io/latest';
 
 export default function Calculator() {
-    const [currency, setCurrency] = useState();
-    console.log(currency);
+    const [currencyName, setCurrencyName] = useState();
+    console.log(currencyName);
     useEffect(() => {
         fetch(currencyUrl)
         .then(res=>res.json())
         .then(data=>
             {
-                setCurrency([data.base, ...Object.keys(data.rates)])
+                setCurrencyName([data.base, ...Object.keys(data.rates)])
             })
     }, [])
     return (

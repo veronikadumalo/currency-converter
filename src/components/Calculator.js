@@ -55,19 +55,23 @@ export default function Calculator() {
     }
 
     return (
-        <div>
-            <CurrencyInput 
-                currencyName={currencyName} 
-                selectedCurrency={fromCurrency}
-                onChangeCurrency={e=>setFromCurrency(e.target.value)}
-                amount={fromAmount}
-                amountChange={amountFromChange}/>
-            <CurrencyInput 
-                currencyName={currencyName} 
-                selectedCurrency={toCurrency}
-                onChangeCurrency={e=>setToCurrency(e.target.value)}
-                amount={toAmount}
-                amountChange={amountToChange}/>
+        <div className=" ">
+            
+                    <CurrencyInput 
+                        currencyName={currencyName} 
+                        selectedCurrency={fromCurrency}
+                        onChangeCurrency={e=>setFromCurrency(e.target.value)}
+                        amount={fromAmount}
+                        amountChange={amountFromChange}/>
+                
+                    <CurrencyInput className=""
+                        currencyName={currencyName} 
+                        selectedCurrency={toCurrency}
+                        onChangeCurrency={e=>setToCurrency(e.target.value)}
+                        amount={toAmount}
+                        amountChange={amountToChange}/>
+               
+            
         </div>
     )
 }

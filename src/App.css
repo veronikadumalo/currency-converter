@@ -1,0 +1,14 @@
+:root {
+    --mainBlue: #0000cc;
+}
+#root{
+    position: relative;
+    min-height: 100vh;
+}
+body {
+    background-image: url(bg2.jpg) !important;
+    background-repeat: no-repeat !important;
+    color: var(--mainBrown) !important;
+    background-size: cover;
+
+}

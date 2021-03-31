@@ -6,8 +6,11 @@ export default function CurrencyInput(props) {
         selectedCurrency,
         onChangeCurrency
     } = props
+
     return (
         <div>
+            <div className={`currency-flag currency-flag-${selectedCurrency ? selectedCurrency.toLowerCase()
+    : null}`}></div>
             <input type="number" />
             <select value={selectedCurrency} onChange={onChangeCurrency}>
                 {currencyName && currencyName.map(option =>(

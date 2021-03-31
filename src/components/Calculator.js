@@ -7,6 +7,7 @@ export default function Calculator() {
     const [currencyName, setCurrencyName] = useState([]);
     const [fromCurrency, setFromCurrency] = useState();
     const [toCurrency, setToCurrency] = useState();
+
     useEffect(() => {
         fetch(currencyUrl)
         .then(res=>res.json())

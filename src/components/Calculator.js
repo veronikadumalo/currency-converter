@@ -7,7 +7,7 @@ export default function Calculator() {
     const [currencyName, setCurrencyName] = useState([]);
     const [fromCurrency, setFromCurrency] = useState();
     const [toCurrency, setToCurrency] = useState(1);
-    const [exchangeRate, setExchangeRate ] = useState(1);
+    const [exchangeRate, setExchangeRate ] = useState();
     const [amount, setAmount] = useState(1);
     const [amountFromCurrency, setAmountFromCurrency] = useState(true);
 
@@ -21,7 +21,7 @@ export default function Calculator() {
         fromAmount=amount/exchangeRate;
     }
 
-    useEffect(() => {
+    useEffect(() => {   
         fetch(currencyUrl)
         .then(res=>res.json())
         .then(data=>
@@ -32,16 +32,17 @@ export default function Calculator() {
                 setFromCurrency(data.base)
                 setToCurrency(toValue)
                 setExchangeRate(data.rates[toValue])
+                
             })
     }, [])
-    
+
     useEffect(() => {
-        if(fromCurrency != null && toCurrency != null){
-            fetch(`${currencyUrl}?base=${fromCurrency}&symbols=${toCurrency}`)
+        if (fromCurrency != null && toCurrency != null) {
+          fetch(`${currencyUrl}?base=${fromCurrency}&symbols=${toCurrency}`)
             .then(res => res.json())
             .then(data => setExchangeRate(data.rates[toCurrency]))
-        } 
-    }, [fromCurrency, toCurrency]);
+        }
+      }, [fromCurrency, toCurrency])
 
     function amountFromChange (e){
         setAmount(e.target.value);
@@ -52,9 +53,6 @@ export default function Calculator() {
         setAmount(e.target.value);
         setAmountFromCurrency(false);
     }
-
-    
-
 
     return (
         <div>

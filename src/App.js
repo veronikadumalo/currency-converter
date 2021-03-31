@@ -1,5 +1,6 @@
 import './App.css';
 import 'currency-flags/dist/currency-flags.css';
+import 'bootstrap/dist/css/bootstrap.min.css';
 import Calculator from './components/Calculator'
 
 function App() {

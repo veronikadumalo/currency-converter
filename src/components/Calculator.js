@@ -6,7 +6,10 @@ const currencyUrl = 'https://api.exchangeratesapi.io/latest';
 export default function Calculator() {
     const [currencyName, setCurrencyName] = useState([]);
     const [fromCurrency, setFromCurrency] = useState();
-    const [toCurrency, setToCurrency] = useState();
+    const [toCurrency, setToCurrency] = useState(1);
+    const [amount, setAmount] = useState();
+    const [exchangeRate, setExchangeRate ] = useState();
+    const [amountFromCurrency, setAmountFromCurrency] = useState(true);
 
     useEffect(() => {
         fetch(currencyUrl)

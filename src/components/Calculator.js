@@ -35,11 +35,14 @@ export default function Calculator() {
             })
     }, [])
 
-    function amountFromChange (){
-
+    function amountFromChange (e){
+        setAmount(e.target.value);
+        setAmountFromCurrency(true);
     }
-    function amountToChange (){
-        
+
+    function amountToChange (e){
+        setAmount(e.target.value);
+        setAmountFromCurrency(false);
     }
     return (
         <div>

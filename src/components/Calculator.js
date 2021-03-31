@@ -7,8 +7,8 @@ export default function Calculator() {
     const [currencyName, setCurrencyName] = useState([]);
     const [fromCurrency, setFromCurrency] = useState();
     const [toCurrency, setToCurrency] = useState(1);
-    const [amount, setAmount] = useState();
     const [exchangeRate, setExchangeRate ] = useState();
+    const [amount, setAmount] = useState(1);
     const [amountFromCurrency, setAmountFromCurrency] = useState(true);
 
     let toAmount, fromAmount
@@ -31,6 +31,7 @@ export default function Calculator() {
                 setCurrencyName([data.base, ...Object.keys(data.rates)])
                 setFromCurrency(data.base)
                 setToCurrency(toValue)
+                setExchangeRate(data.rates[toValue])
             })
     }, [])
     return (
@@ -38,11 +39,13 @@ export default function Calculator() {
             <CurrencyInput 
                 currencyName={currencyName} 
                 selectedCurrency={fromCurrency}
-                onChangeCurrency={e=>setFromCurrency(e.target.value)}/>
+                onChangeCurrency={e=>setFromCurrency(e.target.value)}
+                amount={fromAmount}/>
             <CurrencyInput 
                 currencyName={currencyName} 
                 selectedCurrency={toCurrency}
-                onChangeCurrency={e=>setToCurrency(e.target.value)}/>
+                onChangeCurrency={e=>setToCurrency(e.target.value)}
+                amount={toAmount}/>
         </div>
     )
 }

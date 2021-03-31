@@ -4,13 +4,14 @@ export default function CurrencyInput(props) {
     const {
         currencyName,
         selectedCurrency,
-        onChangeCurrency
+        onChangeCurrency,
+        amount
     } = props
 
     return (
         <div>
-            <div className={`currency-flag currency-flag-${selectedCurrency ? selectedCurrency.toLowerCase() : null}`}></div>
-            <input type="number" />
+            {/*<div className={`currency-flag currency-flag-${selectedCurrency ? selectedCurrency.toLowerCase() : null}`}></div>*/}
+            <input type="number" value={amount}/>
             <select value={selectedCurrency} onChange={onChangeCurrency}>
                 {currencyName && currencyName.map(option =>(
                     <option

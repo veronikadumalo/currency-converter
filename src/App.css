@@ -5,6 +5,9 @@
 body {
     background-image: url(bg2.jpg) !important;
     background-repeat: no-repeat !important;
-    color: var(--mainBrown) !important;
     background-size: cover;
+    font-family: 'Fjalla One', sans-serif  !important;
+}
+h2{
+    color: var(--mainWhite) !important;
 }

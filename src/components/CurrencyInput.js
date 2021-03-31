@@ -28,7 +28,7 @@ export default function CurrencyInput(props) {
 }
 
 const CurrencyRow = style.div`
-background: rgba(255,255,255,0.8);
+background: rgba(255,255,255,0.75);
 font-size: 2rem;
 border: 0.1rem solid var(--mainBlue);
 width: 50%;
@@ -40,6 +40,4 @@ input, select{
     border:none
 }
 
-.currency-flag{
-}
 `

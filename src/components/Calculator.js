@@ -13,7 +13,8 @@ export default function Calculator() {
         .then(res=>res.json())
         .then(data=>
             {
-                const toValue = Object.keys(data.rates)[0]
+                const toValue = Object.keys(data.rates)[19]
+                console.log(data.rates)
                 setCurrencyName([data.base, ...Object.keys(data.rates)])
                 setFromCurrency(data.base)
                 setToCurrency(toValue)

@@ -11,6 +11,16 @@ export default function Calculator() {
     const [exchangeRate, setExchangeRate ] = useState();
     const [amountFromCurrency, setAmountFromCurrency] = useState(true);
 
+    let toAmount, fromAmount
+    if(amountFromCurrency){
+        fromAmount=amount;
+        toAmount=amount*exchangeRate;
+    }
+    else{
+        toAmount=amount;
+        fromAmount=amount/exchangeRate;
+    }
+
     useEffect(() => {
         fetch(currencyUrl)
         .then(res=>res.json())

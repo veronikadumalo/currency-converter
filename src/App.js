@@ -15,11 +15,12 @@ function App() {
 }
 
 const AppWrapp = style.div`
-    color: #000d33;
+    color: var(mainBlue);
     background: rgba(255,255,255,0.2);
     width: 70%;
     margin: 10rem auto;
     text-align: center;
     padding: 5rem 0;
+    border-radius: 2rem;
 `
 export default App;

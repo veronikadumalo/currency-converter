@@ -55,7 +55,7 @@ export default function Calculator() {
     }
 
     return (
-        <div className=" ">
+        <div >
             
                     <CurrencyInput 
                         currencyName={currencyName} 

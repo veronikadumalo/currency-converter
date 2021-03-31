@@ -34,18 +34,27 @@ export default function Calculator() {
                 setExchangeRate(data.rates[toValue])
             })
     }, [])
+
+    function amountFromChange (){
+
+    }
+    function amountToChange (){
+        
+    }
     return (
         <div>
             <CurrencyInput 
                 currencyName={currencyName} 
                 selectedCurrency={fromCurrency}
                 onChangeCurrency={e=>setFromCurrency(e.target.value)}
-                amount={fromAmount}/>
+                amount={fromAmount}
+                amountChange={amountFromChange}/>
             <CurrencyInput 
                 currencyName={currencyName} 
                 selectedCurrency={toCurrency}
                 onChangeCurrency={e=>setToCurrency(e.target.value)}
-                amount={toAmount}/>
+                amount={toAmount}
+                amountChange={amountToChange}/>
         </div>
     )
 }

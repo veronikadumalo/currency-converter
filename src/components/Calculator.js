@@ -1,7 +1,7 @@
 import React, {useEffect, useState} from 'react'
 import CurrencyInput from './CurrencyInput'
 
-const currencyUrl = 'https://api.exchangeratesapi.io/latest';
+const currencyUrl = 'https://api.ratesapi.io/api/latest';
 
 export default function Calculator() {
     const [currencyName, setCurrencyName] = useState([]);
@@ -10,7 +10,7 @@ export default function Calculator() {
     const [exchangeRate, setExchangeRate ] = useState();
     const [amount, setAmount] = useState(1);
     const [amountFromCurrency, setAmountFromCurrency] = useState(true);
-
+    
     let toAmount, fromAmount
     if(amountFromCurrency){
         fromAmount=amount;
@@ -20,6 +20,7 @@ export default function Calculator() {
         toAmount=amount;
         fromAmount=amount/exchangeRate;
     }
+    
 
     useEffect(() => {   
         fetch(currencyUrl)
